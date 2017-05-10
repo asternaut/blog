@@ -11,11 +11,9 @@
   - ex. Views folder, View engine middleware, public directory (check my github history to see the stuff I x'd)
 5. `npm install` is a good idea
 6. Add a test endpoint to app.js:
-```
-app.get('/test', function(req,res){
+```app.get('/test', function(req,res){
   res.json({message: "app functioning properly"})
-});
-```
+});```
 7. Update server in bin/www to port 3001
  - `var port = normalizePort(process.env.PORT || '3001')`
 8. `npm run start`
