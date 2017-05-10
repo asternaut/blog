@@ -1,4 +1,4 @@
- _This is here to help me remember and organize my project_  
+ _notes: self explanatory!_  
 
 ## Getting Started
 
@@ -14,7 +14,8 @@
 ```
 app.get('/test', function(req,res){
   res.json({message: "app functioning properly"})
-});```
+});
+```
 7. Update server in bin/www to port 3001
  - `var port = normalizePort(process.env.PORT || '3001')`
 8. `npm run start`
@@ -23,8 +24,7 @@ app.get('/test', function(req,res){
 9. Configure MongoDB
   - Install any dependencies (Mongo & Mongoose)
   - `npm install --save mongoose`
-  - Add magically connect to Database listener
-_Yay! All set up!_
+  - Magically connect to Database listener?
 
 ## API Phase
 1. Checkout to a safe branch
