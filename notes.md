@@ -11,7 +11,8 @@
   - ex. Views folder, View engine middleware, public directory (check my github history to see the stuff I x'd)
 5. `npm install` is a good idea
 6. Add a test endpoint to app.js:
-```app.get('/test', function(req,res){
+```
+app.get('/test', function(req,res){
   res.json({message: "app functioning properly"})
 });```
 7. Update server in bin/www to port 3001
@@ -21,6 +22,7 @@
 . Checkout into a new branch **before creating the API**
 9. Configure MongoDB
   - Install any dependencies (Mongo & Mongoose)
+  - `npm install --save mongoose`
   - Add magically connect to Database listener
 _Yay! All set up!_
 
