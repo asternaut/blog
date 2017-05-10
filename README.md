@@ -1,5 +1,5 @@
 # Blog - In the Works
-(What a weird word!)
+_Blog_ is a weird word
 
 ### Project Overview
 
@@ -8,8 +8,10 @@ What we got here is a full-stack JavaScript app! I patched this together with al
 ---
 ### Run This Project
 
-1. `git clone <url>`
-2.
+1. Open your command line
+(first, you may want to [navigate to a specific folder/directory](http://www.wikihow.com/Change-Directories-in-Command-Prompt))
+2. Type: `git clone https://github.com/asternaut/blog.git`
+3. Next...
 
 ---
 ### Backend Overview
@@ -42,7 +44,7 @@ Ex. Article Resource
 Built with:
 - ReactJS
 - React Router
-- Misc Framework
+- Bootstrap
 
 Pages
 - Home
@@ -50,6 +52,8 @@ Pages
   - View Articles
   - Edit Article
 - Contact
+
+---
 
 React Component Hierarchy Tree
 
