@@ -1,9 +1,9 @@
 var mongoose = require('mongoose');
 
 // blueprint constructor
-var ArticleSchema = new mongoose.Schema({
+var EntrySchema = new mongoose.Schema({
   title: {required: true, type: String},
-  img: String;
+  img: String,
   moodRN: String,
   author: {required: true, type: String},
   body: {required: true, type: String},
@@ -11,7 +11,7 @@ var ArticleSchema = new mongoose.Schema({
 });
 
 // Mongoose methods
-ArticleSchema.methods.loadData = function(data){
+EntrySchema.methods.loadData = function(data){
   this.title  = data.title ? data.title : this.title;
   this.img    = data.img ? data.img : this.img;
   this.moodRN = data.moodRN ? data.moodRN : this.moodRN;
@@ -19,4 +19,4 @@ ArticleSchema.methods.loadData = function(data){
   this.body   = data.body ? data.body : this.body;
 }
 
-module.exports = mongoose.model('Article', ArticleSchema);
+module.exports = mongoose.model('entry', EntrySchema);
