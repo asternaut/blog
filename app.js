@@ -4,7 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var articleRoutes = require('./routes/articles')
+var routes = require('./routes/index')
 require('./config/database-connection')();
 
 var app = express();
@@ -16,8 +16,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-//Mounting
-app.use('/api/articles', articleRoutes);
+//Mounting to index.js
+routes(app);
 
 app.get('/test', function(req,res){
   res.json({message: "app functioning properly"})

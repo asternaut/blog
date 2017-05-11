@@ -1,11 +1,7 @@
-var express = require('express');
-var Router = express.Router();
-var entry = require('../models/entry');
+var entry = require('../../models/entry');
 
 // C for create (POST)
-Router.route('/')
-
-.get(function(req,res){
+exports.getAll = (req, res) => {
   entry.find(function(err, data){
     if(err){
       res.send(err);
@@ -13,11 +9,12 @@ Router.route('/')
       res.json({ message: "Sourced your posts 🔍😄", data });
     }
   });
-}) // R for read (GET)
-.post(function(req,res){
+}
+
+// R for read (GET)
+exports.makeNew = (req, res) => {
   var mentry = new entry();
   mentry.loadData(req.body);
-
   mentry.save(function(err, data){
     if(err){
       res.send(err);
@@ -25,11 +22,10 @@ Router.route('/')
       res.json({ data, message: "Post accepted! 👍" });
     }
   })
-});
+}
 
 // U for update (PUT)
-Router.route('/:article_id')
-.put(function(req,res){
+exports.change = (req,res) => {
   entry.findById(req.params.article_id, function(err,data){
     data.loadData(req.body);
     data.save(function(e){
@@ -40,17 +36,18 @@ Router.route('/:article_id')
       }
     });
   });
-})
-.get(function(req,res){
+}
+
+// Get by ID
+exports.getOne = (req,res) => {
   entry.findById(req.params.article_id, function(err,data){
-    if(err){
-      res.send(err);
-    } else {
+    if(err) throw err;
       res.json(data);
-    }
   });
-}) // D for delete
-.delete(function(req,res){
+}
+
+// D for delete
+exports.destroy = (req,res) => {
   entry.remove({_id: req.params.article_id}, function(err,data){
     if(err){
       res.send(err);
@@ -58,6 +55,4 @@ Router.route('/:article_id')
       res.send("Post deleted ✖️")
     }
   });
-});
-
-module.exports = Router;
+}
