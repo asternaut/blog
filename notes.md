@@ -39,3 +39,36 @@ app.get('/test', function(req,res){
  - `git checkout master`
  - `git merge articles` -> brings your new code into articles
  - `git push origin master` -> sync your master branch with new code
+
+## Testing
+1. `npm install --save Mocha Chai chai-http`, and ` npm install --save dotenv`
+2. add to package.json:
+```
+"test": "NODE_ENV=test mocha --no-deprecation --sort --colors --inline-diffs --bail",
+```
+3. add to database.config:
+```
+var mongoose = require('mongoose');
+module.exports = () => {
+  if (process.env.NODE_ENV === 'test' ) {
+    mongoose.connect("mongodb://localhost/test-pt-blog");
+    console.log("📁 📂 🗄 TEST DATABASE OPERATIONAL 🗄 📂 📁");
+  } else {
+    mongoose.connect("mongodb://localhost/pt-blog")
+    console.log("📁 📂 🗄 DEV DATABASE OPERATIONAL 🗄 📂 📁");
+  }}
+```
+4. Create a test database!
+  - create a folder named _test_ and fill with `articles_test.js`
+  - create `.env`
+  - see `articles_test.js` for content
+  - `npm run test` to test
+
+## Configure Build to use Module-less CSS
+1. [create-react-app](https://www.npmjs.com/package/react-scripts-custom)
+2. add to webpack.config.dev.js:
+```
+ loader:`style!css?importLoaders=1&modules&localIdentName=[name]__[local]___[hash:base64:5]!postcss`
+ ```
+3. test css! `import {class} from './styles.css'`
+4. in client: `npm install --save react-router@3`
