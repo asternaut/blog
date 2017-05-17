@@ -1,8 +1,8 @@
-var entry = require('../../models/entry');
+var Article = require('../../models/article');
 
 // C for create (POST)
 exports.getAll = (req, res) => {
-  entry.find(function(err, data){
+  Article.find(function(err, data){
     if(err){
       res.send(err);
     } else {
@@ -13,9 +13,9 @@ exports.getAll = (req, res) => {
 
 // R for read (GET)
 exports.makeNew = (req, res) => {
-  var mentry = new entry();
-  mentry.loadData(req.body);
-  mentry.save(function(err, data){
+  var article = new Article();
+  article.loadData(req.body);
+  article.save(function(err, data){
     if(err){
       res.send(err);
     } else {
@@ -26,7 +26,7 @@ exports.makeNew = (req, res) => {
 
 // U for update (PUT)
 exports.change = (req,res) => {
-  entry.findById(req.params.article_id, function(err,data){
+  Article.findById(req.params.article_id, function(err,data){
     data.loadData(req.body);
     data.save(function(e){
       if(e){
@@ -40,7 +40,7 @@ exports.change = (req,res) => {
 
 // Get by ID
 exports.getOne = (req,res) => {
-  entry.findById(req.params.article_id, function(err,data){
+  Article.findById(req.params.article_id, function(err,data){
     if(err) throw err;
       res.json(data);
   });
@@ -48,7 +48,7 @@ exports.getOne = (req,res) => {
 
 // D for delete
 exports.destroy = (req,res) => {
-  entry.remove({_id: req.params.article_id}, function(err,data){
+  Article.remove({_id: req.params.article_id}, function(err,data){
     if(err){
       res.send(err);
     } else {

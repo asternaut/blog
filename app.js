@@ -52,4 +52,8 @@ app.use(function(err, req, res, next) {
     })
 });
 
+app.get('*', function (req, res) {
+  res.sendFile(path.join(__dirname, 'client/public', 'index.html'));
+});
+
 module.exports = app;
