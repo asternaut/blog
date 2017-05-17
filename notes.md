@@ -65,10 +65,18 @@ module.exports = () => {
   - `npm run test` to test
 
 ## Configure Build to use Module-less CSS
-1. [create-react-app](https://www.npmjs.com/package/react-scripts-custom)
+1. [create-react-app](https://www.npmjs.com/package/react-scripts-cusctom)
 2. add to webpack.config.dev.js:
 ```
  loader:`style!css?importLoaders=1&modules&localIdentName=[name]__[local]___[hash:base64:5]!postcss`
  ```
 3. test css! `import {class} from './styles.css'`
 4. in client: `npm install --save react-router@3`
+
+## Blog Post Components:
+- ArticleList
+  - ArticleCard
+- PostArticle
+- EditArticle
+- ViewArticle
+Each will need a component, container
