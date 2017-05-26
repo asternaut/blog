@@ -1,17 +1,18 @@
 import React from 'react';
-import {Card} from './Card/Card';
+import {Card} from '../../components';
 import {Link} from 'react-router';
 
 const List = (props) => {
   return(
     <div>
-      <h1> View Blog Posts </h1>
-      {props.entry.map((item, index) => {
-        return(
-          <Card key={index} {...item}/>
-        )
-      })}
-      <Link to={`/edit`}> Edit </Link>
+      <div>
+        <h1> View Blog Posts </h1>
+
+        {props.articles.map((item, index) => {
+            return <Card key={index} {...item}/>
+        })}
+
+      </div>
     </div>
   )
 }

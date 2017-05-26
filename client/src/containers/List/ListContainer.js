@@ -4,7 +4,7 @@ import {List} from '../../components';
 
 class ListContainer extends Component {
   state={
-    article: undefined
+    articles: undefined
   }
 
   componentDidMount = () => this.loadArticles()
@@ -14,15 +14,18 @@ class ListContainer extends Component {
        url: '/api/articles',
        method: 'GET'
      }).done((response) => {
+        let articles = response.data.reverse(); //show articles in reverse order - first entry @ top
        this.setState({articles: response.data})
      console.log(response.data);
      })
   }
 
+
+
   render () {
     return(
       <div className="list-container">
-        { this.state.article ? <List article={ this.state.article }/> : <p> Error! Bummer :( </p> }
+        { this.state.articles ? <List articles={ this.state.articles }/> : <p> One moment! </p> }
       </div>
     )
   }

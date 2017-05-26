@@ -1,0 +1,39 @@
+.card{
+  margin: 0 auto;
+  width: calc(90% - 20px);
+  padding: 10px 12px;
+  margin: 30px 0;
+  border: 1px solid #D9D9D9;
+}
+
+.card img{
+  margin: -10px -12px;
+  width: calc(100% + 24px);
+  filter: grayscale(100);
+}
+
+.heroTitle{
+  color: #70A9A1;
+  font-weight: bold;
+  font-size: 1.4em;
+  font-style: italic;
+  margin: 25px 0px 15px 0px;
+}
+
+.detailsSpan{
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 7px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid black;
+}
+
+.heroAuthor{
+  padding-left: 5px;
+}
+
+.postBody{
+  color: #353535;
+  line-height: 1.5em;
+  font-size: 0.9em;
+}

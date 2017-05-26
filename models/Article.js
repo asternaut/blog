@@ -7,6 +7,7 @@ var ArticleSchema = new mongoose.Schema({
   moodRN: String,
   author: {required: true, type: String},
   body: {required: true, type: String},
+  comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }],
   //tags: String
 });
 

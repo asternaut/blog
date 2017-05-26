@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {Router, Route, browserHistory, IndexRoute} from 'react-router';
 
 import App from './App';
-import {HomeContainer, AboutContainer, EditContainer, ListContainer, CardContainer, PostContainer, ViewContainer} from './containers';
+import {HomeContainer, AboutContainer, EditContainer, ListContainer, PostContainer, ViewContainer} from './containers';
 require ('./App.css');
 //import {About} from './containers'
 
@@ -15,9 +15,8 @@ ReactDOM.render(
       <Route path="/about" component={AboutContainer} />
       <Route path="/edit" component={EditContainer} />
       <Route path="/list" component={ListContainer} />
-      <Route path="/card" component={CardContainer} />
       <Route path="/post" component={PostContainer} />
-      <Route path="/view" component={ViewContainer} />
+      <Route path="/view/:articleId" component={ViewContainer} />
     </Route>
   </Router>,
   document.getElementById('root')

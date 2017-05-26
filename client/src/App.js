@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+// new way to do css!
 import {container} from './App.css'
 
 class App extends Component {

@@ -9,4 +9,5 @@ module.exports = (app) => {
   app.put("/api/articles/:article_id", ArticleRoutes.change);
   app.post("/api/articles", ArticleRoutes.makeNew);
   app.delete("/api/articles/:article_id", ArticleRoutes.destroy);
+  app.post("/api/articles/comment/:article_id", ArticleRoutes.makeComment)
 }

@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Libre-Baskerville');
 .container{
-  color: rgb(30, 160, 190);
-  font-family: sans-serif;
+  margin: 0 auto;
+  width: calc(99% - 20px);
+  font-family: 'Libre Baskerville';
 }
