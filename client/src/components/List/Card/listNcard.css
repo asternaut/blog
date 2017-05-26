@@ -13,11 +13,20 @@
 }
 
 .heroTitle{
-  color: #70A9A1;
-  font-weight: bold;
+  color: #787878;
   font-size: 1.4em;
-  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
   margin: 25px 0px 15px 0px;
+}
+
+a {
+  color: rgb(124, 163, 204);
+  text-decoration: none;
+}
+
+a:hover{
+  color: rgb(55, 115, 177);
 }
 
 .detailsSpan{

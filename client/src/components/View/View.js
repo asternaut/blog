@@ -1,9 +1,10 @@
 import React from 'react';
 import {heroTitle, detailsSpan, heroMood, heroAuthor, postBody, card} from '../List/Card/listNcard.css'
 import {Link} from 'react-router';
+import {Comments} from '../../components'
 
 const View = (props) => {
-  console.log(props);
+  console.log("props ", props)
   return(
     <div>
       <h1> Selected Post (View Page) </h1>
@@ -16,8 +17,18 @@ const View = (props) => {
           <div className={heroAuthor}> written by: {props.article.author} </div>
         </div>
         <div className={postBody}> {props.article.body} </div>
-        <button> <Link to={`/edit`}> Edit </Link> </button>
+        <button> <Link to={`/edit/${props.article._id}`}> Edit </Link> </button>
       </div>
+
+      <div className="Comments">
+        <form>
+          <textarea type="text" placeholder="add comment" onChange={(event) => props.updateText(event)}/>
+          <button type="submit" onClick={(event) => props.submitComment(event, props.article._id)}> comment </button>
+        </form>
+        <h3> Comments </h3>
+        <Comments comments={props.comments}/>
+      </div>
+
     </div>
   )
 }

@@ -45,7 +45,7 @@ exports.getOne = (req,res) => {
     .populate('comments')
     .exec((err,data) => {
         if(err) throw err;
-        res.send(data);
+        res.send({data: data, message: "Found your article!"});
     })
 }
 
@@ -67,6 +67,7 @@ exports.makeComment = (req,res) => {
     const newComment = new Comment();
     console.log( "CONSOLE ", req.body);
     newComment.loadData(req.body);
+
     newComment.save((err, savedComment) => {
       console.log("SAVED COMMENT: ", savedComment);
       if(err) throw err;

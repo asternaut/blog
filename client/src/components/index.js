@@ -5,5 +5,6 @@ export {default as List} from './List/List'
 export {default as Card} from './List/Card/Card'
 export {default as Post} from './Post/Post'
 export {default as View} from './View/View'
+export {default as Comments} from './Comments/Comments'
 
 // export component from file as 'Home'
