@@ -27,7 +27,7 @@ exports.makeNew = (req, res) => {
 
 // U for update (PUT)
 exports.change = (req,res) => {
-  Article.findById(req.params.article_id, function(err,data){
+  Article.findById(req.params.articleId, function(err,data){
     data.loadData(req.body);
     data.save(function(e){
       if(e){
@@ -41,7 +41,7 @@ exports.change = (req,res) => {
 
 // Get by ID
 exports.getOne = (req,res) => {
-  Article.findById(req.params.article_id)
+  Article.findById(req.params.articleId)
     .populate('comments')
     .exec((err,data) => {
         if(err) throw err;
@@ -51,7 +51,7 @@ exports.getOne = (req,res) => {
 
 // D for delete
 exports.destroy = (req,res) => {
-  Article.remove({_id: req.params.article_id}, function(err,data){
+  Article.remove({_id: req.params.articleId}, function(err,data){
     if(err){
       res.send(err);
     } else {
@@ -61,7 +61,7 @@ exports.destroy = (req,res) => {
 }
 
 exports.makeComment = (req,res) => {
-  Article.findById(req.params.article_id, (err, article) => {
+  Article.findById(req.params.articleId, (err, article) => {
     console.log("ARTICLE: ", article);
     if(err) throw err;
     const newComment = new Comment();

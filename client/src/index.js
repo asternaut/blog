@@ -13,7 +13,7 @@ ReactDOM.render(
       <Route path="/home" component={HomeContainer} />
       <IndexRoute component={HomeContainer} />
       <Route path="/about" component={AboutContainer} />
-      <Route path="/edit" component={EditContainer} />
+      <Route path="/edit/:articleId" component={EditContainer} />
       <Route path="/list" component={ListContainer} />
       <Route path="/post" component={PostContainer} />
       <Route path="/view/:articleId" component={ViewContainer} />
