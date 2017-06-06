@@ -33,7 +33,7 @@ exports.change = (req,res) => {
       if(e){
         res.status(500).send(e);
       } else {
-        res.json({ message: "Post updated ✨✏️✨", data });
+        res.json({ message: "Post updated ✨✏️✨ ", data });
       }
     });
   });

@@ -18,6 +18,7 @@ const View = (props) => {
         </div>
         <div className={postBody}> {props.article.body} </div>
         <button> <Link to={`/edit/${props.article._id}`}> Edit </Link> </button>
+        <Link to={`/list`}> ⬅️ Back to all posts </Link>
       </div>
 
       <div className="Comments">
