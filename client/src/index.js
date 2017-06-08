@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import {Router, Route, browserHistory, IndexRoute} from 'react-router';
 import SignUpContainer from './userAuth/SignUpContainer';
 import LoginContainer from './userAuth/LoginContainer';
+import Portfolio from './portfolio';
 
 import App from './App';
 import {HomeContainer, AboutContainer, EditContainer, ListContainer, PostContainer, ViewContainer} from './containers';
@@ -21,6 +22,7 @@ ReactDOM.render(
       <Route path="/view/:articleId" component={ViewContainer}/>
       <Route path="/signup" component={SignUpContainer}/>
       <Route path="/login" component={LoginContainer}/>
+      <Route path="/portfolio" component={Portfolio} />
     </Route>
   </Router>,
   document.getElementById('root')

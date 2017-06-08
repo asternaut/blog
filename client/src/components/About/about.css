@@ -1,0 +1,45 @@
+.jumbotron{
+  background-color: #F6A2A4;
+  width: 100%;
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.jumbotron p{
+  padding: 0;
+  margin: 0;
+}
+
+.jumbotronText{
+  color: white;
+  width: 100%;
+  text-align: center;
+}
+.jumbotronSMFlex{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.jumbotronSM{
+  background-color: white;
+  border-radius: 10px;
+  width: 187px;
+  padding: 10px;
+  margin: 20px 20px -120px 0px;
+}
+
+.iconFlex{
+  display: flex;
+  justify-content: center;
+}
+
+.icon {
+  color: #F6A2A4;
+  height: 30px;
+  width: 30px;
+  padding: 0 10px;
+}

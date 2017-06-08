@@ -20,15 +20,6 @@
   margin: 25px 0px 15px 0px;
 }
 
-a {
-  color: rgb(124, 163, 204);
-  text-decoration: none;
-}
-
-a:hover{
-  color: rgb(55, 115, 177);
-}
-
 .detailsSpan{
   display: flex;
   flex-wrap: wrap;

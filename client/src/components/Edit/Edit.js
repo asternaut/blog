@@ -16,6 +16,7 @@ const Edit = (props) => {
         <textarea type="text" value={props.body} onChange={(event) => props.updateField('body', event.target.value)} />
         <button type="submit"> update </button>
       </form>
+      <button> delete </button>
     </div>
   )
 }

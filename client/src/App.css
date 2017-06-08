@@ -1,6 +1,45 @@
-@import url('https://fonts.googleapis.com/css?family=Libre-Baskerville');
+@import url('https://fonts.googleapis.com/css?family=Libre-Baskerville|Montserrat');
+
+body{
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Montserrat';
+}
+
+
 .container{
   margin: 0 auto;
   width: calc(99% - 20px);
-  font-family: 'Libre Baskerville';
+
+}
+
+element {
+  --primary-color: #F6A2A4;
+}
+
+.nav{
+  background-color: #F6A2A4;
+  width: 100%;
+  padding: 5px 0;
+}
+
+.nav ul{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20px;
+  padding: 0px;
+
+}
+
+.nav li{
+  list-style: none;
+  flex-direction: row;
+  margin: 0 15px;
+  font-family: 'Montserrat';
+}
+
+.nav li a{
+  text-decoration: none;
+  color: white;
+
 }
