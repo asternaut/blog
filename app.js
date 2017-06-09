@@ -37,6 +37,13 @@ app.use(session({
 require('./config/passport')(passport); // pass passport for configuration
 require('./routes/auth')(app, passport); // load our routes and pass in our app and fully configured passport
 
+const isProd = process.env.NODE_ENV === 'production';
+const clientPath = isProd ? 'client/build' : 'client/public';
+
+if (isProd) {
+  app.use(express.static(clientPath));
+}
+
 //Mounting to index.js
 routes(app);
 
@@ -75,6 +82,10 @@ app.use(function(err, req, res, next) {
 
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, 'client/public', 'index.html'));
+});
+
+app.get('*', function (req, res) {
+  res.sendFile(path.join(__dirname, clientPath, 'index.html'));
 });
 
 module.exports = app;
